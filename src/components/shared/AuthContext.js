@@ -52,7 +52,7 @@ export const AuthContextProvider = ({ children }) =>
         Authorization: `Bearer ${loginToken}`, // Add the "loginToken" to the Authorization header
       };
     
-      const apiResponse = await axios.get("https://public-privacy-8e02de565286.herokuapp.com/collaborator/dashboard", {
+      const apiResponse = await axios.get("https://api.public-privacy.xyz/collaborator/dashboard", {
         headers: headers, // Set the headers for the request
         withCredentials: true,
       });
@@ -92,9 +92,9 @@ export const AuthContextProvider = ({ children }) =>
           // setAlertMessage(`You are already logged in.`);
           // setIsAlertVisible(true);
           navigate("/about");}
-        else{  //https://public-privacy-app.azurewebsites.net/
+        else{  
           const apiResponse = await axios.post(
-            "https://public-privacy-8e02de565286.herokuapp.com/collaborator/login", payload,
+            "https://api.public-privacy.xyz/collaborator/login", payload,
             {withCredentials:true}
           );
 
